@@ -153,6 +153,16 @@ class Game
   def turn
     if $z == 0
       puts "#{@name1} à toi de commencer, choisis une case"
+    elsif $z > 8
+      puts "c'est un match nul"
+      puts "Tapes Oui pour rejouer"
+      g = gets.chomp.downcase
+      if g == "oui"
+        Game.new.go
+      else
+        exit
+      end
+
 
     elsif $z % 2 == 0 
       puts "#{@name1} à toi de commencer, choisis une case: "
