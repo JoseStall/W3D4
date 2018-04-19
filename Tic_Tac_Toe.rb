@@ -46,15 +46,11 @@ class Board
   puts "   -----------"
   puts "3   #{@boardCases[2]} | #{@boardCases[5]} | #{@boardCases[8]} "
 
-  end
+end
 
   def play
     #TO DO : une méthode qui change la BoardCase jouée en fonction de la valeur du joueur (X, ou O)
     x = gets.chomp.upcase.to_s
-
-    j1 = "O"
-    j2 = "X"
-
 
     if x == "A1"
      x = 0
@@ -74,16 +70,22 @@ class Board
      x = 7
    elsif x == "C3"
      x = 8
-   else puts "ce n'est pas un choix valide"
-    
-    end
+   else puts "ce n'est pas un choix valide, recommence"
+     return play
+
+   end
+
+   if boardCases[x] == "X" || boardCases[x] == "O"
+    puts "La case est déja rempli, choisis en une autre"
+    return play
+  else 
 
     if $z % 2 == 0
-    boardCases[x] = "X"
+      boardCases[x] = "X"
     else
-    boardCases[x] = "O"
+      boardCases[x] = "O"
     end
-
+  end
   def victory
 
     #TO DO : qui gagne ?
@@ -92,26 +94,26 @@ class Board
       puts "Tapes Oui pour rejouer"
       g = gets.chomp.downcase
       if g == "oui"
-      Game.new.go
+        Game.new.go
       else
-      exit
-    end
+        exit
+      end
 
     elsif @boardCases[0] + @boardCases[3] + @boardCases[6] == "XXX" || @boardCases[1] + @boardCases[4] + @boardCases[7] == "XXX" || @boardCases[2] + @boardCases[5] + @boardCases[8] == "XXX"|| @boardCases[1] + @boardCases[4] + @boardCases[8] == "XXX" || @boardCases[2] + @boardCases[4] + @boardCases[6] == "XXX" || @boardCases[0] + @boardCases[1] + @boardCases[2] == "XXX" || @boardCases[3] + @boardCases[4] + @boardCases[5] == "XXX" || @boardCases[6] + @boardCases[7] + @boardCases[8] == "XXX"  
       puts "bravo #{@name1} tu as gagné!!!"   
       puts "Tapes Oui pour rejouer"
       g = gets.chomp.downcase
-      if g == "oui"
-      Game.new.go
-      else
-      exit
-    end
-    else
-      $z += 1      
+          if g == "oui"
+          Game.new.go
+          else
+          exit
+          end
+        else
+        $z += 1      
 
+      end
     end
   end
-end
 end
 
 class Player
@@ -161,13 +163,7 @@ class Game
     @boardCases.to_s
     @boardCases.victory
     turn
-
-
-    
-
-    
-    #TO DO : affiche le plateau, demande au joueur il joue quoi, vérifie si un joueur a gagné, passe au joueur suivant si la partie n'est pas finie
-
+    #TO DO : affiche le plateau, demande au joueur il joue quoi, vérifie si un joueur a gagné, passe au joueur suivant si la partie n'est pas fini
   end
 
 end
