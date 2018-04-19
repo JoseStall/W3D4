@@ -89,7 +89,7 @@ end
   def victory
 
     #TO DO : qui gagne ?
-    if @boardCases[0] + @boardCases[3] + @boardCases[6] == "OOO" || @boardCases[1] + @boardCases[4] + @boardCases[7] == "OOO" || @boardCases[2] + @boardCases[5] + @boardCases[8] == "OOO"|| @boardCases[1] + @boardCases[4] + @boardCases[8] == "OOO" || @boardCases[2] + @boardCases[4] + @boardCases[6] == "OOO" || @boardCases[0] + @boardCases[1] + @boardCases[2] == "OOO" || @boardCases[3] + @boardCases[4] + @boardCases[5] == "OOO" || @boardCases[6] + @boardCases[7] + @boardCases[8] == "OOO"  
+    if @boardCases[0] + @boardCases[3] + @boardCases[6] == "OOO" || @boardCases[1] + @boardCases[4] + @boardCases[7] == "OOO" || @boardCases[2] + @boardCases[5] + @boardCases[8] == "OOO"|| @boardCases[0] + @boardCases[4] + @boardCases[8] == "OOO" || @boardCases[2] + @boardCases[4] + @boardCases[6] == "OOO" || @boardCases[0] + @boardCases[1] + @boardCases[2] == "OOO" || @boardCases[3] + @boardCases[4] + @boardCases[5] == "OOO" || @boardCases[6] + @boardCases[7] + @boardCases[8] == "OOO"  
       puts "bravo #{@name2} tu as gagné!!!"
       puts "Tapes Oui pour rejouer"
       g = gets.chomp.downcase
@@ -99,7 +99,7 @@ end
         exit
       end
 
-    elsif @boardCases[0] + @boardCases[3] + @boardCases[6] == "XXX" || @boardCases[1] + @boardCases[4] + @boardCases[7] == "XXX" || @boardCases[2] + @boardCases[5] + @boardCases[8] == "XXX"|| @boardCases[1] + @boardCases[4] + @boardCases[8] == "XXX" || @boardCases[2] + @boardCases[4] + @boardCases[6] == "XXX" || @boardCases[0] + @boardCases[1] + @boardCases[2] == "XXX" || @boardCases[3] + @boardCases[4] + @boardCases[5] == "XXX" || @boardCases[6] + @boardCases[7] + @boardCases[8] == "XXX"  
+    elsif @boardCases[0] + @boardCases[3] + @boardCases[6] == "XXX" || @boardCases[1] + @boardCases[4] + @boardCases[7] == "XXX" || @boardCases[2] + @boardCases[5] + @boardCases[8] == "XXX"|| @boardCases[0] + @boardCases[4] + @boardCases[8] == "XXX" || @boardCases[2] + @boardCases[4] + @boardCases[6] == "XXX" || @boardCases[0] + @boardCases[1] + @boardCases[2] == "XXX" || @boardCases[3] + @boardCases[4] + @boardCases[5] == "XXX" || @boardCases[6] + @boardCases[7] + @boardCases[8] == "XXX"  
       puts "bravo #{@name1} tu as gagné!!!"   
       puts "Tapes Oui pour rejouer"
       g = gets.chomp.downcase
